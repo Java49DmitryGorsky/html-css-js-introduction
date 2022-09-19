@@ -51,12 +51,15 @@ body {
     height: 20vw;
     margin-top: 2.5vh;
     border: solid 1px rgb(116, 189, 246);
-
+    border-radius: 23%;
+    overflow: hidden;
 }
 
 .thumbnails-image {
     width: 20vw;
     height: 15vw;
+    /* border-top-right-radius: 27%;
+    border-top-left-radius: 27%; */
 }
 
 .thumbnails-title {
@@ -64,7 +67,9 @@ body {
     text-align: center;
     height: 5vw;
     background-color: beige;
-
+    margin-top: -1vw;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .thumbnails-anchor {
