@@ -8,8 +8,7 @@ body {
     font-size: 2em;
     background-color: bisque;
     text-align: center;
-    /* display: block; */
-
+    display: block;
 }
 
 .main-class {}
@@ -19,7 +18,6 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 2.5vh;
-
 }
 
 .details-image {
@@ -43,7 +41,7 @@ body {
     overflow-y: auto;
     justify-content: space-around;
     padding-left: 0;
-    padding-right: 0;
+    /* padding-right: 0; */
 }
 
 .thumbnails-item {
@@ -60,6 +58,7 @@ body {
     height: 15vw;
     /* border-top-right-radius: 27%;
     border-top-left-radius: 27%; */
+    display: block;
 }
 
 .thumbnails-title {
@@ -67,9 +66,9 @@ body {
     text-align: center;
     height: 5vw;
     background-color: beige;
-    margin-top: -1vw;
+    /* margin-top: -1vw;
     border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: 25px; */
 }
 
 .thumbnails-anchor {
