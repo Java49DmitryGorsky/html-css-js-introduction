@@ -1,156 +1,65 @@
-@font-face {
-    font-family: lakeshore;
-    src: url(fonts/LAKESHOR-webfont.svg);
-    src: url(fonts/LAKESHOR-webfont.woff);
-}
-
-:root {
-    --thumbnails-img-width: 20vw;
-    --thumbnails-img-height: 15vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
-}
-
-body,
-html {
-    height: 100%;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: azure;
-}
-
-.logo {
-    font-size: 2em;
-    background-color: rgb(244, 236, 195);
-    display: block;
+    margin: 40px;
+    background-color: #5d5d5d;
+  }
+  .wrapper {
+    border: 49px solid #462921;
+    width: 560px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(8, 70px);
+    grid-template-rows: 40px repeat(8, 70px) 40px;
+    grid-auto-flow: row;
+  }
+  .wrapper-inner{
+  display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    align-items: strech;
+  }
+  
+  .box {
+    padding: 20px;
+    font-size: 150%;
+    background-color: #b5915f;
+    color: #000;
     text-align: center;
-    font-family: lakeshore;
-    text-transform: uppercase;
-    letter-spacing: 0.11em;
-    color: rgb(60, 88, 247);
-
-}
-
-.main-class {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-
-}
-
-.details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2.5vh;
-
-}
-
-.details-image {
-    width: 70vw;
-    height: 60vw;
-    border-radius: 25%;
-}
-
-.details-title {
-    display: block;
-
-}
-
-.thumbnails-list {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-height: 25vh;
-    overflow-y: auto;
-    /* justify-content: space-around; */
-    justify-content: space-evenly;
-    /* padding-right: 20px; */
-    padding-left: 0;
-}
-
-.thumbnails-item {
-
-    max-width: var(--thumbnails-img-width);
-    min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
-    margin-top: 2.5vh;
-    border: solid 1px black;
-    border-radius: 25%;
-    overflow: hidden;
-}
-
-.thumbnails-image {
-    /* width: 20vw;
-    height: 15vw; */
-    width: var(--thumbnails-img-width);
-    height: var(--thumbnails-img-height);
-    display: block;
-}
-
-.thumbnails-title {
-    display: block;
+  }
+  .box-inner{
     text-align: center;
-    height: 5vw;
-    /* height: var(--thumbnails-img-title); */
-    background-color: beige;
-    /* color: aquamarine; */
-}
-
-.thumbnails-anchor {
-    text-decoration: none;
-}
-
-@media (min-width: 560px) {
-
-    .thumbnails-list {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        max-height: 80vh;
-        order: -1;
-        justify-content: flex-start;
-        padding-right: 12px;
-        /* overflow: auto; */
-    }
-
-    .main-class {
-        /* display: flex; */
-        flex-direction: row;
-        justify-content: space-around;
-
-    }
-
-    .details-image {
-        width: 40vw;
-        height: 30vw;
-    }
-
-    @media (min-width: 900px) {
-
-        .details-container {
-            justify-content: center;
-            padding-bottom: 10vh;
-        }
-
-        .details-title {
-            font-size: xx-large;
-        }
-
-        .thumbnails-item {
-            border: solid rgb(51, 239, 214) 2px;
-        }
-
-        .thumbnails-title {
-            font-size: xx-large;
-        }
-
-        .thumbnails-list {
-            /* order: 0; */
-            padding-right: 20px;
-        }
-    }
-
-}
+    align-self: center;
+  }
+  .top,
+  .bottom{
+    display: grid;
+    align-items: stretch;
+    background-color: #7d694c;
+  }
+  .top {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+  .bottom {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 10;
+    grid-row-end: 10;
+  }
+  
+  .box:nth-child(-2n+9), 
+  .box:nth-child(9) ~ div:nth-child(-2n+16), 
+  .box:nth-child(17) ~ div:nth-child(-2n+25), 
+  .box:nth-child(25) ~ div:nth-child(-2n+32), 
+  .box:nth-child(33) ~ div:nth-child(-2n+41), 
+  .box:nth-child(41) ~ div:nth-child(-2n+48), 
+  .box:nth-child(49) ~ div:nth-child(-2n+57), 
+  .box:nth-child(57) ~ div:nth-child(-2n+64){
+    background-color: #441a03;
+    color: #fff;
+  }
+  
