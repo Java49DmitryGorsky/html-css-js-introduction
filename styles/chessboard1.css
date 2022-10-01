@@ -34,8 +34,6 @@ body {
     height: 100vw;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, .75);
     font-size: 0;
-    /* background-image: url("http://www.wood-database.com/wp-content/uploads/bamboo-qs-sealed.jpg"); */
-    background-image: url(/images/bamboo.jpg);
     background-color: rgb(255, 255, 255);
 }
 
