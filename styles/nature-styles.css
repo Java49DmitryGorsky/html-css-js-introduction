@@ -89,7 +89,7 @@ body {
     max-width: var(--thumbnails-img-width);
     min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
     margin-top: 2.5vh;
-    border: solid 1px black;
+    border: solid 1px rgb(21, 215, 249);
     border-radius: 25%;
     overflow: hidden;
 }
