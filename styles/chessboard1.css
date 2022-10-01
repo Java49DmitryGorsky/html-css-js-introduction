@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background-color: #6A6;
+    background-color: rgb(255, 255, 255);
     /* padding-top: 15em; */
 
 }
@@ -28,15 +28,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     border: 4vw solid transparent;
-    /* border-image: url("http://allroundnews.com/wp-content/uploads/2012/02/seamless-wood-texture-free-6.jpg") 50 stretch; */
     max-width: 480px;
     max-height: 480px;
     width: 100vw;
     height: 100vw;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, .75);
     font-size: 0;
-    background-image: url("http://www.wood-database.com/wp-content/uploads/bamboo-qs-sealed.jpg");
-    background-color: rgb(240, 255, 251);
+    /* background-image: url("http://www.wood-database.com/wp-content/uploads/bamboo-qs-sealed.jpg"); */
+    background-image: url(/images/bamboo.jpg);
+    background-color: rgb(255, 255, 255);
 }
 
 .box {
@@ -44,6 +44,7 @@ body {
     height: 12.5%;
     font-size: 8vw;
     line-height: 12vw;
+    border: solid 1px rgb(0, 0, 0);
 }
 
 .box:nth-child(n+1):nth-child(-n+16) {
@@ -70,7 +71,7 @@ body {
 
     .board {
         border: 18px solid transparent;
-        border-image: url("http://allroundnews.com/wp-content/uploads/2012/02/seamless-wood-texture-free-6.jpg") 50 stretch;
+        /* border-image: url("http://allroundnews.com/wp-content/uploads/2012/02/seamless-wood-texture-free-6.jpg") 50 stretch; */
         box-shadow: 0 15px 15px -5px rgba(0, 0, 0, .75);
     }
 
