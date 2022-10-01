@@ -1,13 +1,19 @@
 @font-face {
     font-family: lakeshore;
-    src: url(fonts/LAKESHOR-webfont.svg);
-    src: url(fonts/LAKESHOR-webfont.woff);
+    src: url("fonts/LAKESHOR-webfont.svg");
+    src: url("fonts/LAKESHOR-webfont.woff")
+}
+
+@font-face {
+    font-family: airstream;
+    src: url("fonts/Airstream-webfont.svg");
+    src: url("fonts/Airstream-webfont.woff")
 }
 
 :root {
     --thumbnails-img-width: 20vw;
     --thumbnails-img-height: 15vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
+    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
 }
 
 body,
@@ -19,17 +25,18 @@ body {
     display: flex;
     flex-direction: column;
     background-color: azure;
+    margin: 0;
+
 }
 
 .logo {
     font-size: 2em;
-    background-color: rgb(244, 236, 195);
+    background-color: rgb(174, 235, 152);
     display: block;
     text-align: center;
     font-family: lakeshore;
     text-transform: uppercase;
-    letter-spacing: 0.11em;
-    color: rgb(60, 88, 247);
+    letter-spacing: 5px;
 
 }
 
@@ -38,26 +45,32 @@ body {
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
-
 }
 
 .details-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.5vh;
+    margin-bottom: 10vh;
+    position: relative;
 
 }
 
 .details-image {
-    width: 70vw;
-    height: 60vw;
+    width: 90vw;
+    height: 70vw;
     border-radius: 25%;
+
 }
 
 .details-title {
     display: block;
-
+    font-family: airstream;
+    font-style: italic;
+    background-color: beige;
+    position: absolute;
+    left: 0vw;
+    bottom: 12vw;
 }
 
 .thumbnails-list {
@@ -67,14 +80,12 @@ body {
     flex-wrap: wrap;
     max-height: 25vh;
     overflow-y: auto;
-    /* justify-content: space-around; */
-    justify-content: space-evenly;
-    /* padding-right: 20px; */
+    justify-content: space-around;
     padding-left: 0;
+
 }
 
 .thumbnails-item {
-
     max-width: var(--thumbnails-img-width);
     min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
     margin-top: 2.5vh;
@@ -84,8 +95,6 @@ body {
 }
 
 .thumbnails-image {
-    /* width: 20vw;
-    height: 15vw; */
     width: var(--thumbnails-img-width);
     height: var(--thumbnails-img-height);
     display: block;
@@ -94,63 +103,86 @@ body {
 .thumbnails-title {
     display: block;
     text-align: center;
-    height: 5vw;
-    /* height: var(--thumbnails-img-title); */
+    height: var(--thumbnails-title-height);
     background-color: beige;
-    /* color: aquamarine; */
 }
 
 .thumbnails-anchor {
     text-decoration: none;
 }
 
-@media (min-width: 560px) {
+.thumbnails-item:hover {
+    transform: scale(1.1);
+    margin-left: 1vw;
+}
+
+@media(min-width: 560px) {
+    :root {
+        --thumbnails-img-width: 12vw;
+        --thumbnails-img-height: 8vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
 
     .thumbnails-list {
         flex-direction: column;
         flex-wrap: nowrap;
-        max-height: 80vh;
+        max-height: 75vh;
         order: -1;
         justify-content: flex-start;
-        padding-right: 12px;
-        /* overflow: auto; */
     }
 
     .main-class {
-        /* display: flex; */
         flex-direction: row;
         justify-content: space-around;
 
     }
 
     .details-image {
-        width: 40vw;
-        height: 30vw;
+        width: 45vw;
+        height: 38vw;
+    }
+
+    .details-container {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .details-title{
+        left: 0;
+        bottom: 4vw;
     }
 
     @media (min-width: 900px) {
-
-        .details-container {
-            justify-content: center;
-            padding-bottom: 10vh;
-        }
-
-        .details-title {
-            font-size: xx-large;
-        }
-
-        .thumbnails-item {
-            border: solid rgb(51, 239, 214) 2px;
+        .thumbnails-list {
+            padding-right: 2vw;
+            margin-top: 2.5vh;
+            max-height: 86vh;
         }
 
         .thumbnails-title {
-            font-size: xx-large;
+            font-size: 1.5em;
         }
 
-        .thumbnails-list {
-            /* order: 0; */
-            padding-right: 20px;
+        .details-container {
+            margin-top: 5vh;
+            margin-right: 5vw;
+        }
+    
+        .details-title {
+            font-size: 1.5em;
+            /* left: 0; */
+            bottom: 9vw;
+        }
+
+        .details-image {
+            width: 45vw;
+            height: 35vw;
         }
     }
+
 
 }
