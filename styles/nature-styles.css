@@ -24,7 +24,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    background-color: azure;
+    background-color: rgb(249, 251, 242);
     margin: 0;
 
 }
@@ -65,12 +65,14 @@ body {
 
 .details-title {
     display: block;
-    font-family: airstream;
+    font-family: lakeshore;
     font-style: italic;
-    background-color: beige;
-    position: absolute;
+    background-color: rgb(158, 243, 121);
+    /* position: absolute; */
+    position: relative;
     left: 0vw;
     bottom: 12vw;
+    font-stretch: extra-expanded;
 }
 
 .thumbnails-list {
@@ -105,6 +107,8 @@ body {
     text-align: center;
     height: var(--thumbnails-title-height);
     background-color: beige;
+    font-family: airstream;
+    background-color: rgb(187, 255, 185);
 }
 
 .thumbnails-anchor {
