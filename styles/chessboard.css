@@ -1,72 +1,56 @@
-* {
-    box-sizing: border-box;
+:root {
+    --cell-width: 9vw;
+    --cell-height: 9vw;
+
 }
 
-body,
 html {
     height: 100%;
+
 }
 
 body {
-    display: flex; 
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(255, 255, 255);
-    /* padding-top: 15em; */
+    height: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
 .board {
-    position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
     display: flex;
-    flex-wrap: wrap;
-    border: 4vw solid transparent;
-    max-width: 480px;
-    max-height: 480px;
-    width: 100vw;
-    height: 100vw;
-    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+
 }
 
-.box {
-    width: 12.5%;
-    height: 12.5%;
-    line-height: 12vw;
-    border: solid 1px rgb(0, 0, 0);
+.board-row {
+    display: flex;
+    flex-direction: row;
+
+
+
 }
 
-/* .box:nth-child(n+1):nth-child(-n+16) {
-    color: #222;
-} */
-
-.board .box:nth-child(n+1):nth-child(-n+8):nth-child(even),
-.board .box:nth-child(n+17):nth-child(-n+25):nth-child(even),
-.board .box:nth-child(n+33):nth-child(-n+40):nth-child(even),
-.board .box:nth-child(n+49):nth-child(-n+56):nth-child(even),
-.board .box:nth-child(n+9):nth-child(-n+16):nth-child(odd),
-.board .box:nth-child(n+25):nth-child(-n+32):nth-child(odd),
-.board .box:nth-child(n+41):nth-child(-n+48):nth-child(odd),
-.board .box:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+.cell-black {
+    width: var(--cell-width);
+    height: var(--cell-height);
     background-color: black;
+    border: 1px solid black;
 }
 
-@media screen and (min-width: 480px) {
+.cell-white {
+    width: var(--cell-width);
+    height: var(--cell-height);
+    background-color: white;
+    border: 1px solid black;
+}
 
-    .body {
-
+@media(min-width: 560px) {
+    :root {
+        --cell-width: 4vw;
+        --cell-height: 4vw;
     }
 
-    .board {
-        border: 18px solid transparent;
-    }
-
-    .box {
-        font-size: 2.5rem;
-        line-height: 56px;
-    }
+}
