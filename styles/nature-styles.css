@@ -1,19 +1,19 @@
 @font-face {
     font-family: lakeshore;
     src: url("fonts/LAKESHOR-webfont.svg");
-    src: url("fonts/LAKESHOR-webfont.woff")
+    src: url("fonts/LAKESHOR-webfont.woff");
 }
 
 @font-face {
     font-family: airstream;
     src: url("fonts/Airstream-webfont.svg");
-    src: url("fonts/Airstream-webfont.woff")
+    src: url("fonts/Airstream-webfont.woff");
 }
 
 :root {
     --thumbnails-img-width: 20vw;
     --thumbnails-img-height: 15vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
+    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33);
 }
 
 body,
@@ -26,18 +26,16 @@ body {
     flex-direction: column;
     background-color: rgb(249, 251, 242);
     margin: 0;
-
 }
 
 .logo {
     font-size: 2em;
-    background-color: rgb(174, 235, 152);
+    background-color: rgb(189, 253, 165);
     display: block;
     text-align: center;
     font-family: lakeshore;
     text-transform: uppercase;
     letter-spacing: 5px;
-
 }
 
 .main-class {
@@ -53,26 +51,26 @@ body {
     align-items: center;
     margin-bottom: 10vh;
     position: relative;
-
 }
 
 .details-image {
     width: 90vw;
     height: 70vw;
     border-radius: 25%;
-
 }
 
 .details-title {
     display: block;
     font-family: lakeshore;
     font-style: italic;
-    background-color: rgb(158, 243, 121);
+    background-color: rgb(255, 254, 222);
     /* position: absolute; */
     position: relative;
     left: 0vw;
     bottom: 12vw;
     font-stretch: extra-expanded;
+    margin-top: 5em;
+    border-radius: 8%;
 }
 
 .thumbnails-list {
@@ -84,7 +82,6 @@ body {
     overflow-y: auto;
     justify-content: space-around;
     padding-left: 0;
-
 }
 
 .thumbnails-item {
@@ -120,11 +117,11 @@ body {
     margin-left: 1vw;
 }
 
-@media(min-width: 560px) {
+@media (min-width: 560px) {
     :root {
         --thumbnails-img-width: 12vw;
         --thumbnails-img-height: 8vw;
-        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
+        --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.25);
     }
 
     .logo {
@@ -142,7 +139,6 @@ body {
     .main-class {
         flex-direction: row;
         justify-content: space-around;
-
     }
 
     .details-image {
@@ -155,7 +151,8 @@ body {
         align-items: center;
         margin-bottom: 0;
     }
-    .details-title{
+
+    .details-title {
         left: 0;
         bottom: 4vw;
     }
@@ -175,7 +172,7 @@ body {
             margin-top: 5vh;
             margin-right: 5vw;
         }
-    
+
         .details-title {
             font-size: 1.5em;
             /* left: 0; */
@@ -187,6 +184,4 @@ body {
             height: 35vw;
         }
     }
-
-
 }
