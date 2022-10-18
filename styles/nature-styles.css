@@ -143,6 +143,8 @@ body {
         max-height: 75vh;
         order: -1;
         justify-content: flex-start;
+        /* width: 20wh; */
+        padding-right: 3vw;
     }
     
     .main-class {
