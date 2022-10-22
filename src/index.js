@@ -1,6 +1,6 @@
 console.log("Launching script");
 const anchors = document.querySelectorAll(".thumbnails-anchor");
-const anchors1 = document.querySelectorAll(".details-container");
+const detimg = document.querySelector(".details-container");
 const detailsImage = document.querySelector(".details-image");
 const detailsTitle = document.querySelector(".details-title");
 const mainClass = document.querySelector(".main-class");
@@ -16,12 +16,6 @@ for (let i = 0; i < anchors.length; i++) {
         setDetails(anchors[i]);
     });
 }
-for (let i = 0; i < anchors1.length; i++) {
-    anchors1[i].addEventListener("click", function () {
-        console.log("event - click on", anchors1[i]);
-        setDetails(anchors1[i]);
-    });
-}
 
 function showDetails() {
     mainClass.classList.remove("hidden");
@@ -29,3 +23,8 @@ function showDetails() {
 function hideDetails() {
     mainClass.classList.add(HIDDEN);
 }
+
+detimg.addEventListener("click", function () {
+    console.log("event - click on", detimg);
+    setDetails(detimg);
+});
