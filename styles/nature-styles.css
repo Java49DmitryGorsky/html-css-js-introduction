@@ -13,11 +13,10 @@
 :root {
     --thumbnails-img-width: 20vw;
     --thumbnails-img-height: 15vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
+    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
 }
 
-body,
-html {
+body, html {
     height: 100%;
 }
 
@@ -30,7 +29,8 @@ body {
 }
 
 .logo {
-    font-size: 2em; color: rgb(0, 207, 0);
+    font-size: 2em; 
+    color: rgb(0, 207, 0);
     background-color: rgb(236, 243, 249);
     /* border: 1em blue; */
     display: block;
@@ -44,8 +44,8 @@ body {
 .main-class {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
+    /* justify-content: center;
+    flex-grow: 1; */
 }
 /* new 9 */
 .hidden.main-class {
@@ -95,7 +95,7 @@ body {
     bottom: 2vh;
     border-radius: 7%;
 }
-/*   added by V*/
+/*   added */
 .hidden .thumbnails-title {
     font-size: 1.5em;
     background-color: yellowgreen;
@@ -166,7 +166,6 @@ body {
         max-height: 75vh;
         order: -1;
         justify-content: flex-start;
-        /* width: 20wh; */
         padding-right: 3vw;
     }
         /* new 9 */
@@ -180,7 +179,7 @@ body {
         flex-direction: row;
         justify-content: space-around;
     }
-    /* added by V */
+    /* added */
     .hidden.main-class {
         --thumbnails-img-width: 22vw;
         --thumbnails-img-height: 13vw;
@@ -197,17 +196,11 @@ body {
         align-items: center;
         margin-bottom: 0;
     }
-    /* added by V*/
+    /* added */
     .hidden .thumbnails-title {
         font-size: 1.7em;
         background-color: rgb(253, 238, 149);
     }
-
-    /* .details-title {
-        font-size: 2em;
-        bottom: 10vw;
-        left: 1vw;
-    } */
 
     @media (min-width: 900px) {
         .thumbnails-list {
@@ -217,15 +210,12 @@ body {
         }
         /* new 9 */
         .hidden .thumbnails-list {
-            /* padding-right: 2vw; */
             margin-top: 2.5vh;
             max-height: 73vh;
-            /* margin-bottom: 10vh; */
         }
 
         .thumbnails-title {
             font-size: 1.5em;
-            /* height: 20vh; */
         }
 
         .details-container {
@@ -233,20 +223,14 @@ body {
             margin-right: 5vw;
         }
 
-        /* .details-title {
-            font-size: 2em;
-            bottom: 20vw;
-        } */
- 
         .details-image {
             width: 45vw;
             height: 35vw;
         }
-        /* added by V */
+        /* added */
         .hidden .thumbnails-title {
             font-size: 1.3em;
             background-color: rgb(171, 254, 171);
-            /* height: 3rem; */
         }
 
     }
