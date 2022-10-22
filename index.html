@@ -11,11 +11,19 @@
 
 <body>
     <header class="logo">Nice views Nature and Sea</header>
-    <main class="main-class">
+    <!-- <main class="main-class hidden">
         <section class="details-container" data-details-image="images/pic.jpg"
         data-details-title="Nice View">
             <img src="images/pic.jpg" class="details-image" />
             <span class="details-title">Nice View</span>
+        </section> -->
+    <main class="main-class hidden">
+        <section class="details-container">
+            <div class="details-frame">
+                <button class="hide-button" onclick="hideDetails()">hide details</button>
+                <img src="images/pic.jpg" class="details-image">
+                <span class="details-title">Nice View</span>
+            </div>
         </section>
         <ul class="thumbnails-list">
             <li class="thumbnails-item">
@@ -27,28 +35,28 @@
             </li>
             <li class="thumbnails-item">
                 <a href="#" class="thumbnails-anchor" data-details-image="images/pic (2).jpg"
-                data-details-title="View Two">
+                    data-details-title="View Two">
                     <img src="images/pic (2).jpg" class="thumbnails-image" />
                     <span class="thumbnails-title">View 2</span>
                 </a>
             </li>
             <li class="thumbnails-item">
                 <a href="#" class="thumbnails-anchor" data-details-image="images/pic (3).jpg"
-                data-details-title="View Three">
+                    data-details-title="View Three">
                     <img src="images/pic (3).jpg" class="thumbnails-image" />
                     <span class="thumbnails-title">View 3</span>
                 </a>
             </li>
             <li class="thumbnails-item">
                 <a href="#" class="thumbnails-anchor" data-details-image="images/pic (4).jpg"
-                data-details-title="View Four">
+                    data-details-title="View Four">
                     <img src="images/pic (4).jpg" class="thumbnails-image" />
                     <span class="thumbnails-title">View 4</span>
                 </a>
             </li>
             <li class="thumbnails-item">
                 <a href="#" class="thumbnails-anchor" data-details-image="images/pic (5).jpg"
-                data-details-title="View Five">
+                    data-details-title="View Five">
                     <img src="images/pic (5).jpg" class="thumbnails-image" />
                     <span class="thumbnails-title">View 5</span>
                 </a>
