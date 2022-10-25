@@ -5,14 +5,15 @@ const detailsImage = document.querySelector(".details-image");
 const detailsTitle = document.querySelector(".details-title");
 const mainClass = document.querySelector(".main-class");
 const detailsContainer = document.querySelector(".details-container");
-// const sounds = document.querySelectorAll("audio") //sound
-// var element = document.getElementById('audio');
+const audio = document.querySelector(".audio-melody");
+
 const HIDDEN = "hidden";
 const IS_POINT = "is-point";
 
 function setDetails(anchor) {
     detailsImage.setAttribute("src", anchor.getAttribute("data-details-image"));
     detailsTitle.innerHTML = anchor.getAttribute("data-details-title");
+
 }
 
 for (let i = 0; i < anchors.length; i++) {
