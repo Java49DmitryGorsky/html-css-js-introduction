@@ -11,53 +11,65 @@
 
 <body>
     <header class="logo">Nice views Nature and Sea</header>
-    <!-- <main class="main-class hidden">
-        <section class="details-container" data-details-image="images/pic.jpg"
-        data-details-title="Nice View">
-            <img src="images/pic.jpg" class="details-image" />
-            <span class="details-title">Nice View</span>
-        </section> -->
     <main class="main-class hidden">
         <section class="details-container" data-details-image="images/pic.jpg">
             <div class="details-frame">
                 <button class="hide-button" onclick="hideDetails()">hide details</button>
                 <img src="images/pic.jpg" class="details-image">
+                <audio id="ship_sound" controls style="display:none">
+                    <source src="sounds/ship_sound.mp3" type="audio/mpeg">
+                </audio>
                 <span class="details-title">Nice View</span>
             </div>
         </section>
         <ul class="thumbnails-list">
             <li class="thumbnails-item">
-                <a href="#" class="thumbnails-anchor" data-details-image="images/pic (1).jpg"
-                    data-details-title="View One">
+                <a href="javascript:playSound('in_mountains');" class="thumbnails-anchor"
+                    data-details-image="images/pic (1).jpg" data-details-title="View One">
                     <img src="images/pic (1).jpg" class="thumbnails-image" />
+                    <audio id="in_mountains" controls style="display:none">
+                        <source src="sounds/in_mountains.mp3" type="audio/mpeg" preload="auto">
+                    </audio>
                     <span class="thumbnails-title">View 1</span>
                 </a>
             </li>
             <li class="thumbnails-item">
-                <a href="#" class="thumbnails-anchor" data-details-image="images/pic (2).jpg"
-                    data-details-title="View Two">
+                <a href="javascript:playSound('calm_surf');" class="thumbnails-anchor"
+                    data-details-image="images/pic (2).jpg" data-details-title="View Two">
                     <img src="images/pic (2).jpg" class="thumbnails-image" />
+                    <audio id="calm_surf" controls style="display:none">
+                        <source src="sounds/calm_surf.mp3" type="audio/mpeg">
+                    </audio>
                     <span class="thumbnails-title">View 2</span>
                 </a>
             </li>
             <li class="thumbnails-item">
-                <a href="#" class="thumbnails-anchor" data-details-image="images/pic (3).jpg"
-                    data-details-title="View Three">
-                    <img src="images/pic (3).jpg" class="thumbnails-image" />
+                <a href="javascript:playSound('surf_noise');" class="thumbnails-anchor"
+                    data-details-image="images/pic (3).jpg" data-details-title="View Three">
+                    <img src="images/pic (3).jpg" onload="OnLoad()" class="thumbnails-image" />
+                    <audio id="surf_noise" controls style="display:none">
+                        <source src="sounds/surf_noise.mp3" type="audio/mpeg">
+                    </audio>
                     <span class="thumbnails-title">View 3</span>
                 </a>
             </li>
             <li class="thumbnails-item">
-                <a href="#" class="thumbnails-anchor" data-details-image="images/pic (4).jpg"
-                    data-details-title="View Four">
-                    <img src="images/pic (4).jpg" class="thumbnails-image" />
+                <a href="javascript:playSound('sea_sunset');" class="thumbnails-anchor"
+                    data-details-image="images/pic (4).jpg" data-details-title="View Four">
+                    <img src="images/pic (4).jpg" onload="OnLoad()" class="thumbnails-image" />
+                    <audio id="sea_sunset" controls style="display:none">
+                        <source src="sounds/sea_sunset.mp3" type="audio/mpeg">
+                    </audio>
                     <span class="thumbnails-title">View 4</span>
                 </a>
             </li>
             <li class="thumbnails-item">
-                <a href="#" class="thumbnails-anchor" data-details-image="images/pic (5).jpg"
-                    data-details-title="View Five">
-                    <img src="images/pic (5).jpg" class="thumbnails-image" />
+                <a href="javascript:playSound('find_me');" class="thumbnails-anchor"
+                    data-details-image="images/pic (5).jpg" data-details-title="View Five">
+                    <img src="images/pic (5).jpg" onload="OnLoad()" class="thumbnails-image" />
+                    <audio id="find_me" controls style="display:none">
+                        <source src="sounds/find_me.mp3" type="audio/mpeg">
+                    </audio>
                     <span class="thumbnails-title">View 5</span>
                 </a>
             </li>
@@ -67,3 +79,5 @@
 </body>
 
 </html>
+
+<!-- onload="OnLoad()" -->
