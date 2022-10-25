@@ -40,10 +40,6 @@ detimg.addEventListener("click", function () {
     setDetails(detimg);
 });
 
-// function OnLoad() {
-//     //On Load Of Image
-//     document.getElementById('myAudio').play();
-// }
 
 function playSound() {
     document.getElementById(ship_sound).play();
@@ -63,6 +59,12 @@ function playSound(in_mountains) {
   function playSound(find_me) {
     document.getElementById(find_me).play();
   };
+
+
+  // function OnLoad() {
+//     //On Load Of Image
+//     document.getElementById('myAudio').play();
+// }
 
 
 
