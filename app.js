@@ -3,6 +3,8 @@
  {
      if (n == 0)
      return 0;
+     if (n < 0)
+     n = -n;
      return (n % 10 + sum_of_digit(parseInt(n / 10)));
  }
 
