@@ -1,7 +1,7 @@
 
 function fromNumberToString(value, code) {
     var digit,
-        radix= code.length,
+        radix = code.length,
         result = '';
 
     do {
@@ -30,26 +30,26 @@ console.log(fromStringToNumber('react', '0123456789abcdefghijklmnopqrstuvwxyz'))
 // function dec2bin(dec) {
 //     return (dec >>> 0).toString(2);
 //   }
-    // console.log(dec2bin(11483)); //2
+// console.log(dec2bin(11483)); //2
 
-  function fromDecToBinary(v) {
+function fromDecToBinary(v) {
     // if (!Number.isSafeInteger(v) || v < 0) {
     //   throw new Error('v must be a non-negative integer');
     // }
-    if (v < 0) { 
-       return console.log("you entered negative integer"); 
+    if (v < 0) {
+        return console.log("you entered negative integer");
     }
     if (v === 1) {
-      return '1';
+        return '1';
     }
     if (v === 0) {
-      return '0';
+        return '0';
     }
     return fromDecToBinary(Math.floor(v / 2)) + (v % 2);
-  }
-  console.log(fromDecToBinary(11483));
+}
+console.log(fromDecToBinary(11483));
 
-  function changeBase(number, fromBase, toBase) {
+function changeBase(number, fromBase, toBase) {
     if (fromBase == 10)
         return (parseInt(number)).toString(toBase)
     else if (toBase == 10)
@@ -62,7 +62,7 @@ console.log(fromStringToNumber('react', '0123456789abcdefghijklmnopqrstuvwxyz'))
 console.log(changeBase(10110011011011, 2, 10));
 
 console.log(changeBase(11483, 10, 2));
-  
+
 // function sumDigits(number) {
 //     // if (number < 0) {
 //     //     number = -number;
@@ -98,7 +98,7 @@ console.log(changeBase(11483, 10, 2));
 // function sumDigits(n) {
 //     return `${n}`.match(/\d/g).reduce( (sum, digit) => sum + +digit, 0 );
 //   }
-  
+
 //   console.log( sumDigits( -623 ) );
 
 // function sum_of_digit(n) {      
@@ -108,5 +108,18 @@ console.log(changeBase(11483, 10, 2));
 //     }      
 //     return sum;
 //   }
-  
+
 //   console.log( sum_of_digit(-623) );
+
+// function factorial(x) {        //Объявление функции
+    
+//     if (x <= 1) return 1;        //Проверка условия окончания расчета
+//     return x * factorial(x-1);   //Вызов этой же функции с уменьшенным на 1 аргументом
+//   }
+// console.log(factorial(5));
+
+// function my_function(n) {
+//     if (n <= 1) return 1;
+//     return my_function(n-1) + " " + n;
+// }
+// console.log(my_function(11))
