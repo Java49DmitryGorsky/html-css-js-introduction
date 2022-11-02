@@ -111,15 +111,3 @@ console.log(changeBase(11483, 10, 2));
 
 //   console.log( sum_of_digit(-623) );
 
-// function factorial(x) {        //Объявление функции
-    
-//     if (x <= 1) return 1;        //Проверка условия окончания расчета
-//     return x * factorial(x-1);   //Вызов этой же функции с уменьшенным на 1 аргументом
-//   }
-// console.log(factorial(5));
-
-// function my_function(n) {
-//     if (n <= 1) return 1;
-//     return my_function(n-1) + " " + n;
-// }
-// console.log(my_function(11))
