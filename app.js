@@ -26,6 +26,8 @@ function checkTeudatZehut(teudatStrNumber) {
         }) % 10 === 0;
 }
 
+
+
 //http://halemo.net/info/idcard/
 
 // const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
