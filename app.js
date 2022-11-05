@@ -1,18 +1,23 @@
+const nineDigits = '012345678';
+const minDigit = 0;
+const maxDigit = 9;
+const char0 = '0'.charCodeAt();
+
 ["1234567890", "001200343", "231740705", "339677395", "000000000", "123456782", "341141430"].map(function (e) {
     console.log(e + " is " + (checkTeudatZehut(e) ? "a valid" : "an invalid") + " Israeli ID");
 });
 
 function checkTeudatZehut(teudatStrNumber) {
     var teudatStrNumber = String(teudatStrNumber).trim(); https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-    
-    function arraySum(teudatStrNumber){
+
+    function arraySum(teudatStrNumber) {
         let sum = 0;
-        for(let i = 0; i < teudatStrNumber.length; i++){
+        for (let i = 0; i < teudatStrNumber.length; i++) {
             sum += teudatStrNumber;
         }
         return sum;
     }
-    
+
     if (teudatStrNumber.length > 9 || teudatStrNumber.length < 5 || isNaN(teudatStrNumber) || arraySum(teudatStrNumber) == 0) return false;
 
     // In case string with zeros up to 9 digits (optional) https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
@@ -21,10 +26,87 @@ function checkTeudatZehut(teudatStrNumber) {
     return Array
         .from(teudatStrNumber, Number)  // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from
         .reduce((counter, digit, i) => {  // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
-            const step = digit * ((i % 2) + 1); 
+            const step = digit * ((i % 2) + 1);
             return counter + (step > 9 ? step - 9 : step);
         }) % 10 === 0;
 }
+// const nineDigits = '012345678';
+// const minDigit = 0;
+// const maxDigit = 9;
+// const char0 = '0'.charCodeAt();
+
+function checkTeudatZehut(tzStr) {
+    if (tzStr.length != nineDigits.length || isNaN(+tzStr)) {
+        console.log("TZ=", tzStr, 'valid=', false);
+        return false;
+    }
+    let ctrlSum = getControlSum(tzStr);
+    let valid = ctrlSum % 10 == 0;
+    console.log("TZ=", tzStr, "ctrlSum=", ctrlSum, 'valid=', valid);
+    return valid;
+}
+
+function getControlSum(tzStr) {
+    /*
+    let array = Array.from(tzStr).map(function(symbol, ind) {
+        let value = symbol.charCodeAt() - char0;
+        return ind % 2 == 0 ? getEvenValue(value) : getOddValue(value*2);
+    });
+    return array.reduce(function(sum, cur) {
+        return sum+cur;
+    }, 0);
+    */
+    return Array.from(tzStr).map(function (symbol, ind) {
+        let value = symbol.charCodeAt() - char0;
+        return ind % 2 == 0 ? getEvenValue(value) : getOddValue(value * 2);
+    }).reduce(function (sum, cur) {
+        return sum + cur;
+    }, 0);
+}
+
+function getOddValue(number) {
+    return number < 10 ? number : number % 10 + Math.trunc(number / 10);
+}
+
+function getEvenValue(number) {
+    return number;
+}
+
+function generateTeudatZehut() {
+    let array = getGeneratedArray();
+    array[8] = updateCtrlDigit(array);
+    if (!checkTeudatZehut(integerArray2String(array))) {
+        console.log('Generation failed');
+    }
+}
+function getGeneratedArray() {
+    return Array.from(nineDigits).map(function (symbol, ind) {
+        let value = (ind == 8) ? 0 : getRandomIntegerValue(minDigit, maxDigit + 1);
+        return ind % 2 == 0 ? getEvenValue(value) : getOddValue(value * 2);
+    });
+}
+function integerArray2String(array) {
+    return array.reduce(function (str, cur) {
+        return str + String.fromCharCode(cur + char0);
+    }, "");
+}
+function updateCtrlDigit(array) {
+    let sum = getControlSum(integerArray2String(array));
+    let roundedSum = Math.floor(sum / 10) * 10;
+    if (roundedSum === sum) {
+        return 0;
+    }
+    return roundedSum + 10 - sum;
+}
+function getRandomIntegerValue(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    // The maximum is exclusive and the minimum is inclusive
+    return Math.floor(Math.random() * (max - min) + min);
+}
+// Tests
+
+generateTeudatZehut();
 
 
 
@@ -188,8 +270,4 @@ function checkTeudatZehut(teudatStrNumber) {
 //             return counter + (step > 9 ? step - 9 : step);
 //         }) % 10 === 0;
 // }
-
-
-
-
 
