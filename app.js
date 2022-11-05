@@ -1,8 +1,3 @@
-const nineDigits = '012345678';
-const minDigit = 0;
-const maxDigit = 9;
-const char0 = '0'.charCodeAt();
-
 ["1234567890", "001200343", "231740705", "339677395", "000000000", "123456782", "341141430"].map(function (e) {
     console.log(e + " is " + (checkTeudatZehut(e) ? "a valid" : "an invalid") + " Israeli ID");
 });
@@ -30,85 +25,6 @@ function checkTeudatZehut(teudatStrNumber) {
             return counter + (step > 9 ? step - 9 : step);
         }) % 10 === 0;
 }
-// const nineDigits = '012345678';
-// const minDigit = 0;
-// const maxDigit = 9;
-// const char0 = '0'.charCodeAt();
-
-function checkTeudatZehut(tzStr) {
-    if (tzStr.length != nineDigits.length || isNaN(+tzStr)) {
-        console.log("TZ=", tzStr, 'valid=', false);
-        return false;
-    }
-    let ctrlSum = getControlSum(tzStr);
-    let valid = ctrlSum % 10 == 0;
-    console.log("TZ=", tzStr, "ctrlSum=", ctrlSum, 'valid=', valid);
-    return valid;
-}
-
-function getControlSum(tzStr) {
-    /*
-    let array = Array.from(tzStr).map(function(symbol, ind) {
-        let value = symbol.charCodeAt() - char0;
-        return ind % 2 == 0 ? getEvenValue(value) : getOddValue(value*2);
-    });
-    return array.reduce(function(sum, cur) {
-        return sum+cur;
-    }, 0);
-    */
-    return Array.from(tzStr).map(function (symbol, ind) {
-        let value = symbol.charCodeAt() - char0;
-        return ind % 2 == 0 ? getEvenValue(value) : getOddValue(value * 2);
-    }).reduce(function (sum, cur) {
-        return sum + cur;
-    }, 0);
-}
-
-function getOddValue(number) {
-    return number < 10 ? number : number % 10 + Math.trunc(number / 10);
-}
-
-function getEvenValue(number) {
-    return number;
-}
-
-function generateTeudatZehut() {
-    let array = getGeneratedArray();
-    array[8] = updateCtrlDigit(array);
-    if (!checkTeudatZehut(integerArray2String(array))) {
-        console.log('Generation failed');
-    }
-}
-function getGeneratedArray() {
-    return Array.from(nineDigits).map(function (symbol, ind) {
-        let value = (ind == 8) ? 0 : getRandomIntegerValue(minDigit, maxDigit + 1);
-        return ind % 2 == 0 ? getEvenValue(value) : getOddValue(value * 2);
-    });
-}
-function integerArray2String(array) {
-    return array.reduce(function (str, cur) {
-        return str + String.fromCharCode(cur + char0);
-    }, "");
-}
-function updateCtrlDigit(array) {
-    let sum = getControlSum(integerArray2String(array));
-    let roundedSum = Math.floor(sum / 10) * 10;
-    if (roundedSum === sum) {
-        return 0;
-    }
-    return roundedSum + 10 - sum;
-}
-function getRandomIntegerValue(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    // The maximum is exclusive and the minimum is inclusive
-    return Math.floor(Math.random() * (max - min) + min);
-}
-// Tests
-
-generateTeudatZehut();
-
-
 
 //http://halemo.net/info/idcard/
 
