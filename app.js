@@ -1,30 +1,87 @@
-["1234567890", "001200343", "231740705", "339677395", "000000000", "123456782", "341141430"].map(function (e) {
-    console.log(e + " is " + (checkTeudatZehut(e) ? "a valid" : "an invalid") + " Israeli ID");
-});
 
-function checkTeudatZehut(teudatStrNumber) {
-    var teudatStrNumber = String(teudatStrNumber).trim(); https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+//1
+let strings = ["abc", "lmn", "cd"];
 
-    function arraySum(teudatStrNumber) {
-        let sum = 0;
-        for (let i = 0; i < teudatStrNumber.length; i++) {
-            sum += teudatStrNumber;
-        }
-        return sum;
-    }
+function ulSurround() {
+    strings = strings.map(function (part) {
+        return "<li>" + part + "</li>";
+    });
+    strings.splice(0, 0, '<ul>')
+    strings.splice(strings.length, 0, '</ul>');
+    return strings;
+};
+strings = ulSurround(strings);
+console.log(strings);
 
-    if (teudatStrNumber.length > 9 || teudatStrNumber.length < 5 || isNaN(teudatStrNumber) || arraySum(teudatStrNumber) == 0) return false;
-
-    // In case string with zeros up to 9 digits (optional) https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
-    teudatStrNumber = teudatStrNumber.length < 9 ? ("00000000" + teudatStrNumber).slice(-9) : teudatStrNumber;
-
-    return Array
-        .from(teudatStrNumber, Number)  // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from
-        .reduce((counter, digit, i) => {  // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
-            const step = digit * ((i % 2) + 1);
-            return counter + (step > 9 ? step - 9 : step);
-        }) % 10 === 0;
+//2
+let strings2 = ["abc", "lmn", "cd", "abc", "abc"];
+let str = "abc";
+let str2 = "ab";
+function count(strings2, str) {
+    return strings2.reduce((count, elem) => count + (elem == str), 0);
 }
+console.log(str + " element in ar [" + strings2 + "]  " + count(strings2, str));
+console.log(str2 = "ab" + " element in ar [" + strings2 + "]   " + count(strings2, str2));
+
+
+//3
+
+  function arrayCopy(src, srcPos, dst, dstPos, length) {
+      let Array1 = src.slice(srcPos, srcPos + length);
+    let Array2 = dst.slice((dstPos));
+    dst = dst.slice(0, dstPos).concat(Array1).concat(Array2); //
+    return dst;
+  }
+  
+  console.log(arrayCopy([1, 2, 3, 4, 5, 6, 7], 3, [10, 20, 30, 40, 50, 60, 70], 4, 3));
+
+//4
+  
+  let array1 = [1, 2, 3, 4, 5, 6, 7];
+  let array2 = [1, 2, 3, 4, 5, 6, 7];
+  move(array1,3,-1);
+  move(array2,2,4);
+  console.log("Output array: " + array1);
+  console.log("Output array: " + array2);
+  
+  function move(array, index, offset) {
+     let element = array.splice(index,1)[0];
+    array.splice(index+offset, 0, element);
+  }
+
+
+
+
+// ------------- 13 HW -------------------------------------------------------------------
+// ["1234567890", "001200343", "231740705", "339677395", "000000000", "123456782", "341141430"].map(function (e) {
+//     console.log(e + " is " + (checkTeudatZehut(e) ? "a valid" : "an invalid") + " Israeli ID");
+// });
+
+// function checkTeudatZehut(teudatStrNumber) {
+//     var teudatStrNumber = String(teudatStrNumber).trim(); https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+
+//     function arraySum(teudatStrNumber) {
+//         let sum = 0;
+//         for (let i = 0; i < teudatStrNumber.length; i++) {
+//             sum += teudatStrNumber;
+//         }
+//         return sum;
+//     }
+
+//     if (teudatStrNumber.length > 9 || teudatStrNumber.length < 5 || isNaN(teudatStrNumber) || arraySum(teudatStrNumber) == 0) return false;
+
+//     // In case string with zeros up to 9 digits (optional) https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+//     teudatStrNumber = teudatStrNumber.length < 9 ? ("00000000" + teudatStrNumber).slice(-9) : teudatStrNumber;
+
+//     return Array
+//         .from(teudatStrNumber, Number)  // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+//         .reduce((counter, digit, i) => {  // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+//             const step = digit * ((i % 2) + 1);
+//             return counter + (step > 9 ? step - 9 : step);
+//         }) % 10 === 0;
+// }
+
+// ------------- 13 HW -------------------------------------------------------------------
 
 //http://halemo.net/info/idcard/
 
@@ -186,4 +243,3 @@ function checkTeudatZehut(teudatStrNumber) {
 //             return counter + (step > 9 ? step - 9 : step);
 //         }) % 10 === 0;
 // }
-
