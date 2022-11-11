@@ -1,53 +1,113 @@
-
+//---------------HW15--------------------------------------
 //1
-let strings = ["abc", "lmn", "cd"];
-
-function ulSurround() {
-    strings = strings.map(function (part) {
-        return "<li>" + part + "</li>";
-    });
-    strings.splice(0, 0, '<ul>')
-    strings.splice(strings.length, 0, '</ul>');
-    return strings;
-};
-strings = ulSurround(strings);
-console.log(strings);
+let numbers = [3, -25, 10, -12, 7, 2];
+function minMax(numbers) {
+  return numbers.reduce((mm, val) => {
+      mm[0] = ( mm[0] === undefined || val < mm[0] ) ? val : mm[0]
+      mm[1] = ( mm[1] === undefined || val > mm[1] ) ? val : mm[1]
+      return mm;
+  }, []);
+  }
+console.log(minMax(numbers));
 
 //2
-let strings2 = ["abc", "lmn", "cd", "abc", "abc"];
-let str = "abc";
-let str2 = "ab";
-function count(strings2, str) {
-    return strings2.reduce((count, elem) => count + (elem == str), 0);
-}
-console.log(str + " element in ar [" + strings2 + "]  " + count(strings2, str));
-console.log(str2 = "ab" + " element in ar [" + strings2 + "]   " + count(strings2, str2));
+let itemsArr = ['abc', 'old_abc', 'lmn', '123', 'old_lmn'];
+let prefix = 'old_';
 
+function deleteWithPrefix(itemsArr, prefix) {
+    return itemsArr.filter(element => !element.startsWith(prefix));
+}
+
+console.log(`deleteWithPrefix. in: ${itemsArr},    pref: ${prefix},     out: ${deleteWithPrefix(itemsArr, prefix)}`);
 
 //3
 
-  function arrayCopy(src, srcPos, dst, dstPos, length) {
-      let Array1 = src.slice(srcPos, srcPos + length);
-    let Array2 = dst.slice((dstPos));
-    dst = dst.slice(0, dstPos).concat(Array1).concat(Array2); //
-    return dst;
-  }
-  
-  console.log(arrayCopy([1, 2, 3, 4, 5, 6, 7], 3, [10, 20, 30, 40, 50, 60, 70], 4, 3));
+function getSortedEvenOdd(numbers) {
+  return numbers.sort((a, b)=> {
+      return a % 2 == 0 && a < b ? -1 : b % 2 == 0 ? 1 : b-a;
+  })
+}
+numbers = [1, 6, 3, 8, 5, 2, 7, 4];
+console.log(`2. getSortedEvenOdd input: ${numbers}, output: ${getSortedEvenOdd(numbers)}`);
 
-//4
+
+let n = [1, 6, 3, 8, 5, 2, 7, 4];
+let odds = n.filter((a) => a % 2 !== 0).sort((a, b) => b - a);
+let even = n.filter((a) => a % 2 === 0).sort((a, b) => a - b);
+let sorted = even.concat(odds);
+console.log(sorted);
+
+
+// const arr = [3, -25, 10, 12, -7, -2, 15, 4, -11, 20];
+// const isEven = num => num % 2 === 0;
+// const sorter = ((a, b) => {
+//    if(isEven(a) && !isEven(b)){
+//       return -1;
+//    };
+//    if(!isEven(a) && isEven(b)){
+//       return 1;
+//    };
+//    return a - b;
+// });
+// const oddEvenSort = arr => {
+//    arr.sort(sorter);
+// };
+// oddEvenSort(arr);
+// console.log(arr);
+
+
+
+// -----------------------HW14-----------------------------------------
+
+// //1
+// let strings = ["abc", "lmn", "cd"];
+
+// function ulSurround() {
+//     strings = strings.map(function (part) {
+//         return "<li>" + part + "</li>";
+//     });
+//     strings.splice(0, 0, '<ul>')
+//     strings.splice(strings.length, 0, '</ul>');
+//     return strings;
+// };
+// strings = ulSurround(strings);
+// console.log(strings);
+
+// //2
+// let strings2 = ["abc", "lmn", "cd", "abc", "abc"];
+// let str = "abc";
+// let str2 = "ab";
+// function count(strings2, str) {
+//     return strings2.reduce((count, elem) => count + (elem == str), 0);
+// }
+// console.log(str + " element in ar [" + strings2 + "]  " + count(strings2, str));
+// console.log(str2 = "ab" + " element in ar [" + strings2 + "]   " + count(strings2, str2));
+
+
+// //3
+
+//   function arrayCopy(src, srcPos, dst, dstPos, length) {
+//       let Array1 = src.slice(srcPos, srcPos + length);
+//     let Array2 = dst.slice((dstPos));
+//     dst = dst.slice(0, dstPos).concat(Array1).concat(Array2); //
+//     return dst;
+//   }
   
-  let array1 = [1, 2, 3, 4, 5, 6, 7];
-  let array2 = [1, 2, 3, 4, 5, 6, 7];
-  move(array1,3,-1);
-  move(array2,2,4);
-  console.log("Output array: " + array1);
-  console.log("Output array: " + array2);
+//   console.log(arrayCopy([1, 2, 3, 4, 5, 6, 7], 3, [10, 20, 30, 40, 50, 60, 70], 4, 3));
+
+// //4
   
-  function move(array, index, offset) {
-     let element = array.splice(index,1)[0];
-    array.splice(index+offset, 0, element);
-  }
+//   let array1 = [1, 2, 3, 4, 5, 6, 7];
+//   let array2 = [1, 2, 3, 4, 5, 6, 7];
+//   move(array1,3,-1);
+//   move(array2,2,4);
+//   console.log("Output array: " + array1);
+//   console.log("Output array: " + array2);
+  
+//   function move(array, index, offset) {
+//      let element = array.splice(index,1)[0];
+//     array.splice(index+offset, 0, element);
+//   }
 
 
 
