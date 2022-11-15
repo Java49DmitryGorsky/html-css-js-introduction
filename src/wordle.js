@@ -5,7 +5,7 @@ let guesses = document.querySelector('.guesses');
 let lastAttempt = document.querySelector('.lastAttempt');
 let guessAmount = 6;
 function onChange(event) {
-    const wordGuess = event.target.value;
+    const wordGuess = event.target.value.toLocaleLowerCase();
     event.target.value = '';
     if (wordGuess.length != N_LETTERS) {
         alert(`A word should contain ${N_LETTERS} letters`)
