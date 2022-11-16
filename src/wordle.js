@@ -16,7 +16,7 @@ function onChange(event) {
             let index = word.indexOf(l);
             let res = 'red';
             if (index > -1) {
-                res = index == word.charAt(i) ? 'green' : 'yellow';
+                res = index == i ? 'green' : 'yellow';
             }
             return res;
         })
