@@ -1,49 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvels Field</title>
     <link rel="stylesheet" href="styles/wordle.css">
     <script src="src/wordle.js"></script>
 </head>
 
 <body>
-
     <div id="chooseDifficulty" style="display: block">
-        <h1>Guess a Word</h1>
-        <h5>Choose a difficulty</h5>
+        <h1>Marvels Field</h1>
+        <h5>Choose a level</h5>
         <button title="very easy" onclick="chooseDif1()">easy</button>
         <button title="not difficult" onclick="chooseDif2()">normal</button>
         <button title="a challenge" onclick="chooseDif3()">hard</button>
     </div>
 
-    <!--not active yet :(-->
-    <!--<div id="chooseTheme" style="display: none">
-
-            <h1>Guess a Word</h1>
-            <h5>Choose a Theme</h5>
-            <button onclick="chooseTheme1()">random</button>
-            <button onclick="chooseTheme2()">2</button>
-            <button onclick="chooseTheme3()">3</button>
-
-        </div>-->
-
     <div id="startButton" style="display: none">
-
         <h1>Guess a Word</h1>
         <button onclick="start()">Start</button>
         <p>Note: Some words may contain a hyphen(-) ex: X-ray</p>
-
     </div>
 
     <div id="mainGame" style="display: none">
-
         <p id="question"></p>
-
         <input type="text" id="guess" maxlength="1">
-
         <div>
             <button onclick="enterGuess()">Enter Guess</button>
         </div>
-
     </div>
 
     <div id="RRguess" style="display: block">
@@ -79,29 +66,3 @@
 </body>
 
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/wordle.css">
-</head>
-<body>
-    <input type="text" onchange="onChange(event)">
-    <section class="word-guess">
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
-        <div class="letter-guess"></div>
-    </section>
-    <div class="resultGuesses">
-        <p class="guesses"></p>
-        <p class="lastAttempt"></p>
-    </div>
-   <script src="src/wordle.js"></script> 
-</body>
-</html> -->
