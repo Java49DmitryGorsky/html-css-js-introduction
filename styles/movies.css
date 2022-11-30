@@ -6,7 +6,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    background-color: azure;
+    background-color: rgb(255, 241, 253);
     overflow: hidden;
 }
 .movies-list, .single-movie {
@@ -20,12 +20,13 @@ body {
     list-style: none;
 }
 .movie-poster {
-    width: 200px;
+    width: 400px;
 }
 
 .buttons-block {
     display: flex;
     justify-content: center;
+    background-color: rgb(255, 149, 227);
 }
 
 .buttons-block button {
@@ -34,7 +35,7 @@ body {
 
 .all-movies {
     overflow-y: scroll;
-    max-height: 40vw;
+    /* max-height: 40vw; */
 }
 
 .movie-item {
