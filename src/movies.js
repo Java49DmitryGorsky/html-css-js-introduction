@@ -4,12 +4,11 @@ const httpPrefix = "https://image.tmdb.org/t/p/w500";
 
 const moviesData = JSON.parse(jsonData);
 
-// DOM
 const fullMoviesList = document.querySelector(".movies-list");
 const sectionElements = document.querySelectorAll("section");
 const mostPopularMovie = document.querySelector(".most-popular-movie");
 const leastPopularMovie = document.querySelector(".least-popular-movie");
-//
+
 fullMoviesList.innerHTML = getFullMoviesList();
 mostPopularMovie.innerHTML = getMostPopularMovie();
 leastPopularMovie.innerHTML = getLeastpopularMovie();
@@ -55,7 +54,7 @@ function getMostPopularMovie() {
 function getLeastpopularMovie() {
     const leastPopularMovie = moviesData.results.reduce((minPopularMovie, currentMovie) => {
         return (minPopularMovie.popularity > currentMovie.popularity) ? currentMovie: minPopularMovie;
-    }, moviesData.results[0]);  // V.R. Initial value isn't obligatory
+    }); 
     const movieInfo =  
         `<div class="single-movie">
             <div class="movie-item">
