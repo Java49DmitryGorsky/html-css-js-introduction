@@ -1,0 +1,42 @@
+.form-class {
+    display: flex;
+    flex-direction: column;
+}
+.two-inputs {
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+    margin-top: 5vh;
+}
+.date-label {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column; 
+    height: 10vh;
+    justify-content: space-around;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10vh;
+}
+
+.errorMsg {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 200px;
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+.error {
+    margin-top: 31vh;
+    color: red;
+    position: absolute;
+    left: 70vh;
+    /*top: 40px;*/
+    /*width: 200px;*/
+    color: red;
+    font-size: 18px;
+    /*font-style: italic;*/
