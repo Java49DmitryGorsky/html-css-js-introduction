@@ -25,7 +25,7 @@ function onChange(event) {
     if (event.target.name == "birthDate") {
         const arrDate = (event.target.value).split('-');
         const needYear = +arrDate[0];
-        if (needYear < minYear || needYear > curYear) {
+        if (needYear < 1950 || needYear > curYear) {
             errorMission(event, `year should be between 1950...${curYear}`);
         }
     }
