@@ -1,4 +1,3 @@
-import { Company } from "./data/company.js";
 const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_SALARY = 1000;
 const MAX_SALARY = 40000;
@@ -7,8 +6,7 @@ const maxYear = getMaxYear();
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 const ACTIVE = "active"
-
-
+const company = new Company();
 
 const dateErrorElement = document.getElementById("date_error");
 const salaryErrorElement = document.getElementById("salary_error");
@@ -18,10 +16,6 @@ const employeesSalaryListElement = document.getElementById("employees-salary");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 /************************************************************************** */
-//functions of Company
-
-
-const company = new Company();
 //functions of Employee Form
 function onSubmit(event) {
     event.preventDefault();
@@ -77,7 +71,20 @@ function getMaxYear() {
     return new Date().getFullYear();
 }
 /************************************************************* */
-
+//functions of Company
+function Company() {
+    this.employees = [];
+}
+Company.prototype.hireEmployee = function(employee) {
+    employee.salary = +employee.salary;
+    this.employees.push(employee);
+}
+Company.prototype.getAllEmployees = function(){
+    return this.employees;
+}
+Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
+    return this.employees.filter(e => e.salary >= salaryFrom && e.salary < salaryTo )
+}
 /********************************************************************************** */
 
 //functions of Salary Form
@@ -132,9 +139,3 @@ function getEmployeeItems(employees) {
           </li>`).join('');
 }
 
-window.onSubmit = onSubmit;
-window.onChange = onChange;
-window.showSection = showSection;
-window.onChangeSalaryTo = onChangeSalaryTo;
-window.onChangeSalaryFrom = onChangeSalaryFrom
-window.onSubmitSalary = onSubmitSalary
