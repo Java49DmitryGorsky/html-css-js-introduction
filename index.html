@@ -10,13 +10,12 @@
 </head>
 
 <body>
-    <header class="form-title">
-        LIBRARY
-    </header>
+    <header class="form-title">Library</header>
     <div class="buttons-menu">
         <button onclick="show(0)" class="btn-menu">Add book</button>
         <button onclick="show(1)" class="btn-menu">Show All books</button>
         <button onclick="show(2)" class="btn-menu">Show books by pages</button>
+        <button onclick="show(3)" class="btn-menu">Show books by the selected author</button>
     </div>
     <section id="add-employee" hidden>
         <header class="form-title">
@@ -26,6 +25,11 @@
             <div class="two-inputs">
                 <input type="text" name="author" required placeholder="Enter author">
                 <input type="text" name="title" required placeholder="Enter title">
+                <div class="date-label">
+                    <label>Enter publication date</label>
+                    <input type="date" name="publicationDate" required onchange="onChange(event)">
+
+                </div>
                 <p id="date_error" class="error"></p>
                 <div class="two-inputs">
                     <select name="genre" required>
@@ -45,9 +49,6 @@
                     <button type="submit">Submit</button>
                     <button type="reset">Reset</button>
                 </div>
-
-
-
         </form>
     </section>
     <section id="show-all-books" hidden>
@@ -74,6 +75,26 @@
         </ul>
     </section>
 
+    <p id="pages_form_error" class="error center"></p>
+    <ul class="books-list" id="books-pages">
+
+    </ul>
+    </section>
+    <section id="show-books-author" hidden>
+        <form id="author-form" class="form-class" onsubmit="onSubmitAuthor(event)">
+            <div class="one-inputs">
+                <input type="text" name="Author" placeholder="Enter author" required>
+
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <ul class="books-list" id="books-author">
+
+        </ul>
+    </section>
     <script src="src/main.js" type="module"></script>
 </body>
 

@@ -2,7 +2,7 @@ body, html {
     height: 100%;
 }
 body {
-    background-color: aliceblue;
+
 }
 .form-title {
     text-align: center;
@@ -20,16 +20,16 @@ body {
 .two-inputs {
     display: flex;
     justify-content: space-around;
-    width: 50vw;
+    width: 90vw;
     margin-top: 5vh;
     
     
 }
 .date-label {
-    margin-top: 5vh;
+    margin-top: 2vh;
     display: flex;
     flex-direction: column; 
-    height: 10vh;
+    height: 9vh;
     justify-content: space-around;
 }
 .buttons {
@@ -49,12 +49,6 @@ body {
     display: flex;
     justify-content: center;
    
-}
-.btn-menu+.btn-menu {
-    margin-left: 10vh;
-}
-.center {
-    text-align: center;
 }
 
 
